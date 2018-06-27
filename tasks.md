@@ -139,13 +139,13 @@ In order to see your changes in a browser, you can run `npm start` to start the 
 
 @app-post-transfer-route Switch back to `app.js` and create a `post` route that points to the `/transfer` URL path. We will fill in the body of the function for this route in the next few steps.
 
-## 3.5 - Calculate and Set the From Balances
+## 3.5 - Calculate and Set the From Balance
 
 @app-post-transfer-route-from-balance Still in `app.js` and in the function body of the post route we are going to calculate the new balances for the account we are transferring from.
 
 We have several values that have been entered into the HTML form in `transfer.ejs`. Upon form submission the request body will contain `from`, `to`, and `amount`. Current account balances are stored in the `accounts` object. As an example to access the current balance for the savings account use `accounts["savings"].balance`. Using these values, calculate the new balance of the account we are transferring **from**. Then set the balance to that amount.
 
-## 3.6 - Calculate and Set the From Balances
+## 3.6 - Calculate and Set the To Balances
 
 @app-post-transfer-route-to-balance Still in `app.js` and in the function body of the post route we are going to calculate the new balances for the account we are transferring to.
 
@@ -153,11 +153,11 @@ We have several values that have been entered into the HTML form in `transfer.ej
 
 ## 3.7 - Convert Account Data to JSON
 
-@app-post-transfer-route-write-json Still in `app.js` and in the function body of the post route, convert the `accounts` javascript object to a string using the `JSON.stringify` function save this string in a variable called `accountsJSON`.
+@app-post-transfer-route-convert-json Still in `app.js` and in the function body of the post route, convert the `accounts` javascript object to a string using the `JSON.stringify` function save this string in a variable called `accountsJSON`.
 
 ## 3.8 - Write Account Data to JSON file
 
-Still in `app.js` and in the function body of the post route, use the `writeFileSync` function of the built-in `fs` library to write the variable `accountsJSON` to the file located at `json/accounts.json`.
+@app-post-transfer-route-write-json Still in `app.js` and in the function body of the post route, use the `writeFileSync` function of the built-in `fs` library to write the variable `accountsJSON` to the file located at `json/accounts.json`.
 
 Notes:
 
@@ -248,37 +248,37 @@ Notes:
 
 @routes-accounts-js-export-router In `accounts.js` export the `router` using the `module.exports` syntax.
 
-## 5.6 - Use the Routes
-
-@app-use-account-routes In `app.js` where your account routes used to be, call the `use` function on `app` with two arguments. The first argument should be `/account` and the second is the `accountRoutes` const.
-
-## 5.7 - Create a Services Routes File
+## 5.6 - Create a Services Routes File
 
 @routes-services-js-create-file Create a new file called `services.js` in the directory `src/routes/`.
 
-## 5.8 - Require Express
+## 5.7 - Require Express
 
 @routes-services-js-require-express In the new `services.js` require the express framework and store a reference to it in a `const` called `express`.  Next, call the `express.Router()` function and store it in a `const` called `router`.
 
-## 5.9 - Require Data Library
+## 5.8 - Require Data Library
 
 @routes-services-js-require-data In `services.js` require `data.js` and at the same time use object destructing to create two constants called `accounts` and `writeJSON`. **Note: use relative paths to require the data module. Use `'../data'` since it is one level up.**
 
-## 5.10 - Move Services Routes
+## 5.9 - Move Services Routes
 
 @routes-services-js-move-routes In `app.js` locate the transfer and payment post and get routes, cut and paste these routes to `services.js` below the require statements. Now in `services.js` update the routes to be part of the router by replacing `app.get` with `router.get`.
 
-## 5.11 - Export the Router
+## 5.10 - Export the Router
 
 @routes-services-js-export-router In `services.js` export the `router` using the `module.exports` syntax.
 
-## 5.12 - Require account routes
+## 5.11 - Require account routes
 
 @app-require-account-routes Switch to `app.js` and require the `routes/accounts.js` file and store a reference to it in a `const` called `accountRoutes`.
 
-## 5.13 - Require services routes
+## 5.12 - Require services routes
 
 @app-require-services-routes Switch to `app.js` and require the `routes/services.js` file and store a reference to it in a `const` called `servicesRoutes`.
+
+## 5.13 - Use the Routes
+
+@app-use-account-routes In `app.js` where your account routes used to be, call the `use` function on `app` with two arguments. The first argument should be `/account` and the second is the `accountRoutes` const.
 
 ## 5.14 - Use the Routes
 
