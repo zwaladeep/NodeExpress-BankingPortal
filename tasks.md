@@ -143,13 +143,17 @@ In order to see your changes in a browser, you can run `npm start` to start the 
 
 @app-post-transfer-route-from-balance Still in `app.js` and in the function body of the post route we are going to calculate the new balances for the account we are transferring from.
 
-We have several values that have been entered into the HTML form in `transfer.ejs`. Upon form submission the request body will contain `from`, `to`, and `amount`. Current account balances are stored in the `accounts` object. As an example to access the current balance for the savings account use `accounts["savings"].balance`. Using these values, calculate the new balance of the account we are transferring **from**. Then set the balance to that amount.
+We have several values that have been entered into the HTML form in `transfer.ejs`. Upon form submission the request body will contain `from`, `to`, and `amount`. Current account balances are stored in the `accounts` object. As an example to access the current balance for the savings account use `accounts["savings"].balance`.
+
+- Subtract the amount entered from the account selected (req.body.from) and save it back to the accounts object.
 
 ## 3.6 - Calculate and Set the To Balances
 
 @app-post-transfer-route-to-balance Still in `app.js` and in the function body of the post route we are going to calculate the new balances for the account we are transferring to.
 
-We have several values that have been entered into the HTML form in `transfer.ejs`. Upon form submission the request body will contain `from`, `to`, and `amount`. Current account balances are stored in the `accounts` object. As an example to access the current balance for the savings account use `accounts["savings"].balance`. Using these values, calculate the new balance of the account we are transferring **to**. Then set the balance to that amount. **Hint: you will need to use `parseInt()`**
+We have several values that have been entered into the HTML form in `transfer.ejs`. Upon form submission the request body will contain `from`, `to`, and `amount`. Current account balances are stored in the `accounts` object. As an example to access the current balance for the savings account use `accounts["savings"].balance`. 
+
+- Add the amount entered to the account selected (req.body.to) and save it back to back to the accounts object, remember to use `parseInt()` on both values when adding.
 
 ## 3.7 - Convert Account Data to JSON
 
