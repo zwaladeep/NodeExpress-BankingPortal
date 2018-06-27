@@ -232,11 +232,11 @@ Notes:
 
 @routes-accounts-js-create-file Create a new file called `accounts.js` in the directory `src/routes/` (you will need to create this directory).
 
-## 5.2 - Require Express
+## 5.2 - Require Express - Accounts
 
 @routes-accounts-js-require-express In the new `accounts.js` require the express framework and store a reference to it in a `const` called `express`.  Next, call the `express.Router()` function and store it in a `const` called `router`.
 
-## 5.3 - Require Data Library
+## 5.3 - Require Data Library - Accounts
 
 @routes-accounts-js-require-data In `accounts.js` require `data.js` and at the same time use object destructuring to create one constant called `accounts`. **Note: use relative paths to require the data module. Use `'../data'` since it is one level up.**
 
@@ -244,7 +244,7 @@ Notes:
 
 @routes-accounts-js-move-routes In `app.js` locate the savings, checking, and credit get routes, cut and paste these routes in `accounts.js` below the require statements. Now in `accounts.js` update the routes to be part of the router by replacing `app.get` with `router.get`.
 
-## 5.5 - Export the Router
+## 5.5 - Export the Router - Accounts
 
 @routes-accounts-js-export-router In `accounts.js` export the `router` using the `module.exports` syntax.
 
@@ -252,11 +252,11 @@ Notes:
 
 @routes-services-js-create-file Create a new file called `services.js` in the directory `src/routes/`.
 
-## 5.7 - Require Express
+## 5.7 - Require Express - Services
 
 @routes-services-js-require-express In the new `services.js` require the express framework and store a reference to it in a `const` called `express`.  Next, call the `express.Router()` function and store it in a `const` called `router`.
 
-## 5.8 - Require Data Library
+## 5.8 - Require Data Library - Services
 
 @routes-services-js-require-data In `services.js` require `data.js` and at the same time use object destructing to create two constants called `accounts` and `writeJSON`. **Note: use relative paths to require the data module. Use `'../data'` since it is one level up.**
 
@@ -264,7 +264,7 @@ Notes:
 
 @routes-services-js-move-routes In `app.js` locate the transfer and payment post and get routes, cut and paste these routes to `services.js` below the require statements. Now in `services.js` update the routes to be part of the router by replacing `app.get` with `router.get`.
 
-## 5.10 - Export the Router
+## 5.10 - Export the Router - Services
 
 @routes-services-js-export-router In `services.js` export the `router` using the `module.exports` syntax.
 
@@ -276,11 +276,11 @@ Notes:
 
 @app-require-services-routes Switch to `app.js` and require the `routes/services.js` file and store a reference to it in a `const` called `servicesRoutes`.
 
-## 5.13 - Use the Routes
+## 5.13 - Use the Account Routes
 
 @app-use-account-routes In `app.js` where your account routes used to be, call the `use` function on `app` with two arguments. The first argument should be `/account` and the second is the `accountRoutes` const.
 
-## 5.14 - Use the Routes
+## 5.14 - Use the Services Routes
 
 @app-use-services-routes In `app.js` where your account routes used to be, call the `use` function on `app` with two arguments. The first argument should be `/services` and the second is the `servicesRoutes` const.
 
