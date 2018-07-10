@@ -292,7 +292,8 @@ Notes:
 
 @views-update-for-routes Since all URL paths have changed for accounts and services we need to change the following views:
 
-- In `src/views/index.ejs` change `href="transfer"` to `href="/services/transfer"`
+- In `src/views/index.ejs` change `href="/transfer"` to `href="/services/transfer"`
 - In `src/views/summary.ejs` change `href="<%= account.unique_name %>"` to `href="/account/<%= account.unique_name %>"`
 - In `src/views/transfer.ejs` change `action="/transfer"` to `action="/services/transfer"`
 - In `src/views/payment.ejs` change `action="/payment"` to `action="/services/payment"`
+- In `src/views/account.ejs` change `href="/payment"`to `href="/services/payment"`
