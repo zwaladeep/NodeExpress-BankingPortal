@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 const request = require('supertest');
 const rewire = require('rewire');
 const chai = require('chai');
@@ -5,8 +7,11 @@ const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
 const { mockReq, mockRes } = require('sinon-express-mock');
 
-const appModule = rewire('../src/app');
-
+const temp_app = fs.readFileSync(path.join(process.cwd(), 'src/app.js'), 'utf8');
+const overwritten = temp_app.replace(/console.log\((.*)[^)]\)/, 'console.log()')
+fs.writeFileSync(path.join(process.cwd(), 'src/temp_app.js'), overwritten , 'utf8')
+const appModule = rewire(path.join(process.cwd(), 'src/temp_app.js'));
+fs.unlinkSync(path.join(process.cwd(), 'src/temp_app.js'))
 chai.use(sinonChai);
 
 let app;
