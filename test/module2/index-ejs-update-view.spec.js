@@ -25,15 +25,15 @@ describe('Update `index` view', () => {
       'The `profile` link seems to be missing.'
     );
     assert(
-      /<%-\s+include\(('|")summary(\.ejs)?('|")\s*,\s*{\s+account:\s*accounts.savings\s*}\s*\)(;)?\s*%>/.test(file),
+      /<%-\s+include\(('|")summary(\.ejs)?('|")\s*,\s*{\s*account:\s*accounts.savings\s*}\s*\)(;)?\s*%>/.test(file),
       'Have you included the `summary` view for the `savings` account.'
     );
     assert(
-      /<%-\s+include\(('|")summary(\.ejs)?('|")\s*,\s*{\s+account:\s*accounts.checking\s*}\s*\)(;)?\s*%>/.test(file),
+      /<%-\s+include\(('|")summary(\.ejs)?('|")\s*,\s*{\s*account:\s*accounts.checking\s*}\s*\)(;)?\s*%>/.test(file),
       'Have you included the `summary` view for the `checking` account.'
     );
     assert(
-      /<%-\s+include\(('|")summary(\.ejs)?('|")\s*,\s*{\s+account:\s*accounts.credit\s*}\s*\)(;)?\s*%>/.test(file),
+      /<%-\s+include\(('|")summary(\.ejs)?('|")\s*,\s*{\s*account:\s*accounts.credit\s*}\s*\)(;)?\s*%>/.test(file),
       'Have you included the `summary` view for the `credit` account.'
     );
     assert(
