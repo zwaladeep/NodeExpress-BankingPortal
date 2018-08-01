@@ -5,12 +5,12 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon ./src/app.js",
-    "test:module1": "NODE_ENV=test mocha --exit './test/module1/*.spec.js' || true",
-    "test:module2": "NODE_ENV=test mocha --exit './test/module2/*.spec.js' || true",
-    "test:module3": "NODE_ENV=test mocha --exit './test/module3/*.spec.js' || true",
-    "test:module4": "NODE_ENV=test mocha --exit './test/module4/*.spec.js' || true",
-    "test:module5": "NODE_ENV=test mocha --exit './test/module5/*.spec.js' || true",
-    "test": "NODE_ENV=test mocha --exit './test/**/*.spec.js' || true"
+    "test:module1": "cross-env NODE_ENV=test mocha --exit './test/module1/*.spec.js' || true",
+    "test:module2": "cross-env NODE_ENV=test mocha --exit './test/module2/*.spec.js' || true",
+    "test:module3": "cross-env NODE_ENV=test mocha --exit './test/module3/*.spec.js' || true",
+    "test:module4": "cross-env NODE_ENV=test mocha --exit './test/module4/*.spec.js' || true",
+    "test:module5": "cross-env NODE_ENV=test mocha --exit './test/module5/*.spec.js' || true",
+    "test": "cross-env NODE_ENV=test mocha --exit './test/**/*.spec.js' || true"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
   "devDependencies": {
     "chai": "4.1.2",
     "cheerio": "1.0.0-rc.2",
+    "cross-env": "^5.2.0",
     "mocha": "5.1.1",
     "nodemon": "1.17.4",
     "proxyquire": "2.0.1",
